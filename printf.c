@@ -7,18 +7,28 @@
  */
 void _putin(int num)
 {
-char buffer[40];
-int i, idx = 0;
+char *buffer = NULL;
+int i, idx = 0, temp = num, ct = 0;
 if (num == 0)
 {
 _putchar('0');
+return;
+}
+while (temp > 0)
+{
+temp = temp \ 10;
+ct++;
+}
+buffer =(char *)malloc((ct + 1) * sizeof(char));
+if (buffer == NULL)
+{
 return;
 }
 if (num < 0)
 {
 _putchar('-');
 num = -num;
-}    
+}
 while (num > 0)
 {
 buffer[idx++] = '0' + (num % 10);
@@ -28,6 +38,7 @@ for (i = idx - 1 ; i >= 0 ; i--)
 {
 _putchar(buffer[i]);
 }
+free(buffer);
 }
 #include "main.h"
 /**
@@ -40,15 +51,14 @@ int _printf(const char *format, ...)
 {
 int num, chars_written = 0;
 const char *ptr = format;
-char c;
-char *s;
+char *s, c;
 va_list args;
 va_start(args, format);
 while (*ptr != '\0')
 {
 if (*ptr == '%')
 {
-ptr++;            
+ptr++;
 if (*ptr == 'c')
 {
 c = va_arg(args, int);
