@@ -14,6 +14,10 @@ if (num == 0)
 _putchar('0');
 return;
 }
+if (temp < 0)
+{
+temp = -temp;
+}
 while (temp > 0)
 {
 temp /= 10;
@@ -52,12 +56,12 @@ int _printf(const char *format, ...)
 int num, chars_written = 0;
 const char *ptr = format;
 char *s, c;
-va_list args;
-va_start(args, format);
 if (format == NULL)
 {
 return;
 }
+va_list args;
+va_start(args, format);
 while (*ptr != '\0')
 {
 if (*ptr == '%')
