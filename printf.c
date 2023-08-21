@@ -54,6 +54,10 @@ const char *ptr = format;
 char *s, c;
 va_list args;
 va_start(args, format);
+if (format == NULL)
+{
+return;
+}
 while (*ptr != '\0')
 {
 if (*ptr == '%')
