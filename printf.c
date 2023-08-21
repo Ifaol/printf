@@ -16,7 +16,7 @@ return;
 }
 while (temp > 0)
 {
-temp = temp \ 10;
+temp /= 10;
 ct++;
 }
 buffer =(char *)malloc((ct + 1) * sizeof(char));
