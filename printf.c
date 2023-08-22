@@ -11,6 +11,10 @@ int chars_written = 0;
 const char *ptr = format;
 char *s, c;
 va_list args;
+if (format == NULL)
+{
+return (-1);
+}
 va_start(args, format);
 while (*ptr != '\0')
 {
