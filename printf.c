@@ -14,7 +14,7 @@ char *s, c;
 va_list args;
 if (format == NULL)
 {
-return (0);
+return (-1);
 }
 va_start(args, format);
 while (*ptr != '\0')
