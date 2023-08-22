@@ -24,15 +24,12 @@ ptr++;
 if (*ptr == 'c')
 {
 c = (char)va_arg(args, int);
-if (c != '\0')
-{
 _putchar(c);
 chars_written++;
 }
-}
 else if (*ptr == 's')
 {
-s = va_arg(args, char *);
+s = (char *)va_arg(args, char *);
 while (s != NULL && *s != '\0')
 {
 _putchar(*s);
