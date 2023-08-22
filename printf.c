@@ -37,6 +37,11 @@ s++;
 chars_written++;
 }
 }
+else if (*ptr == '%')
+{
+_putchar(*ptr);
+chars_written++;
+}
 else
 {
 --ptr;
