@@ -22,6 +22,10 @@ while (*ptr != '\0')
 if (*ptr == '%')
 {
 ptr++;
+if (*ptr == '\0')
+{
+return (-1);
+}
 if (*ptr == 'c')
 {
 c = (char)va_arg(args, int);
