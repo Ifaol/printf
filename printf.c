@@ -23,9 +23,12 @@ if (*ptr == '%')
 ptr++;
 if (*ptr == 'c')
 {
-c = va_arg(args, int);
+c = (char)va_arg(args, int);
+if (c != '\0')
+{
 _putchar(c);
 chars_written++;
+}
 }
 else if (*ptr == 's')
 {
