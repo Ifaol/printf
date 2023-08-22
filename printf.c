@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 int chars_written = 0;
+char *null = "(null)";
 const char *ptr = format;
 char *s, c;
 va_list args;
@@ -32,9 +33,14 @@ else if (*ptr == 's')
 s = (char *)va_arg(args, char *);
 if (s == NULL)
 {
-return (-1);
+chars_written++;
+while(*null != '\0')
+{
+_putchar(*null);
+null++;
 }
-while (*s != '\0')
+}
+while (s != NULL && *s != '\0')
 {
 _putchar(*s);
 s++;
