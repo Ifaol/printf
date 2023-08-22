@@ -30,12 +30,16 @@ chars_written++;
 else if (*ptr == 's')
 {
 s = (char *)va_arg(args, char *);
-if (s != NULL && *s == '\0')
+if (s == NULL)
+{
+return (-1);
+}
+if (*s == '\0')
 {
 _putchar(*s);
 chars_written++;
 }
-while (s != NULL && *s != '\0')
+while (*s != '\0')
 {
 _putchar(*s);
 s++;
