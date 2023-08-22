@@ -36,16 +36,15 @@ chars_written++;
 else
 {
 --ptr;
-goto commen_output;
+_putchar(*ptr);
+chars_written++;
 }
 }
 else
 {
-goto commen_output;
-}
-commen_output:
 _putchar(*ptr);
 chars_written++;
+}
 ptr++;
 }
 va_end(args);
