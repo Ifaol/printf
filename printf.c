@@ -33,10 +33,10 @@ else if (*ptr == 's')
 s = (char *)va_arg(args, char *);
 if (s == NULL)
 {
-chars_written++;
 while(*null != '\0')
 {
 _putchar(*null);
+chars_written++;
 null++;
 }
 }
