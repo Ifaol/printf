@@ -34,11 +34,6 @@ if (s == NULL)
 {
 return (-1);
 }
-if (*s == '\0')
-{
-_putchar(*s);
-chars_written++;
-}
 while (*s != '\0')
 {
 _putchar(*s);
