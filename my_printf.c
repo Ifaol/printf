@@ -6,17 +6,12 @@
  *
  *Return: int chars written
  */
-int _printf_helper_str(char *s, int chars_written)
+int printf_helper_str(char *s, int chars_written)
 {
-char *null = "(null)";
 if (s == NULL)
 {
-while (*null != '\0')
-{
-_putchar(*null);
-chars_written++;
-null++;
-}
+null_string();
+chars_written = chars_written + 6;
 }
 while (s != NULL && *s != '\0')
 {
@@ -37,7 +32,6 @@ int _printf(const char *format, ...)
 {
 int chars_written = 0;
 const char *ptr = format;
-char *s, c;
 va_list args;
 if (format == NULL)
 {
@@ -46,29 +40,10 @@ return (-1);
 va_start(args, format);
 while (*ptr != '\0')
 {
-if (*ptr == '%' && (*(ptr + 1) == 'c' || *(ptr + 1) == 's' || *(ptr + 1) == '\0' || *(ptr + 1) == '%'))
+if (*ptr == '%' && char_test(ptr))
 {
+chars_written = printf_helper_form(ptr, args, chars_written);
 ptr++;
-if (*ptr == '\0')
-{
-return (-1);
-}
-else if (*ptr == 'c')
-{
-c = (char)va_arg(args, int);
-_putchar(c);
-chars_written++;
-}
-else if (*ptr == 's')
-{
-s = (char *)va_arg(args, char *);
-chars_written = _printf_helper_str(s, chars_written);
-}
-else if (*ptr == '%')
-{
-_putchar(*ptr);
-chars_written++;
-}
 }
 else
 {
