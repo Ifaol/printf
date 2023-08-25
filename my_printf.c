@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *my_printf - a custome printf function
+ *_printf - a custome printf function
  *@format: const char pointer input
  *
  *Return: no of chars written
