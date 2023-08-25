@@ -11,11 +11,7 @@ int printf_helper_form(const char *ptr, va_list args, int chars_written)
 {
 char *s, c;
 ptr++;
-if (*ptr == '\0')
-{
-return (-1);
-}
-else if (*ptr == 'c')
+if (*ptr == 'c')
 {
 c = (char)va_arg(args, int);
 _putchar(c);

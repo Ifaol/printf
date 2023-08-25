@@ -20,6 +20,10 @@ while (*ptr != '\0')
 test = char_test(ptr);
 if (*ptr == '%' && test == 1)
 {
+if (*(ptr + 1) == '\0')
+{
+return (-1);
+}
 chars_written = printf_helper_form(ptr, args, chars_written);
 ptr++;
 }
