@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_printf_helper_str - a printf helper function for string cases
+ *printf_helper_str - a printf helper function for string cases
  *@s: string input
  *@chars_written: int input
  *
