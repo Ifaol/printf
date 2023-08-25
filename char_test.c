@@ -12,8 +12,9 @@ if (*ptr == '\0' || *ptr == 'c' || *ptr == 's' || *ptr == '%')
 {
 return (1);
 }
-else
+else if (*ptr == 'i' || *ptr == 'd')
 {
-return (0);
+return (2);
 }
+return (0);
 }

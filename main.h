@@ -11,4 +11,7 @@ void null_string(void);
 int printf_helper_form(const char *ptr, va_list args, int chars_written);
 int printf_helper_str(char *s, int chars_written);
 int char_test(const char *ptr);
+int printf_helper_doubles(double d, int chars_written);
+int printf_helper_ints(int i, int chars_written);
+int printf_helper_num(const char *ptr, va_list args, int chars_written);
 #endif

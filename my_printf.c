@@ -27,6 +27,11 @@ return (-1);
 chars_written = printf_helper_form(ptr, args, chars_written);
 ptr++;
 }
+else if (*ptr == '%' && test == 2)
+{
+chars_written = printf_helper_num(ptr, args, chars_written);
+ptr++;
+}
 else
 {
 _putchar(*ptr);
